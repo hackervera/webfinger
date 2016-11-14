@@ -12,7 +12,7 @@ defmodule Webfinger.HostMeta do
       """
       <?xml version="1.0" encoding="UTF-8"?>
       <XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0">
-        <Link rel="lrdd" type="application/xrd+xml" template="#{conn.scheme}//#{conn.host}:#{conn.port}/webfinger?q={uri}"/>
+        <Link rel="lrdd" type="application/xrd+xml" template="#{conn.scheme}://#{conn.host}:#{conn.port}/webfinger?q={uri}"/>
       </XRD>
       """
     conn |> send_resp(200, xml)
